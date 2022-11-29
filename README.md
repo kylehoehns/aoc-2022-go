@@ -19,6 +19,7 @@ To run the given puzzle input for the day.
 ```shell
 go run puzzles/day00/main.go
 ```
+```
           .     .  .      +     .      .          .
      .       .      .     #       .           .
         .      .         ###            .      .      .
