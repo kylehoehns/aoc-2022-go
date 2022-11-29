@@ -7,7 +7,7 @@ import (
 	"github.com/kylehoehns/aoc-2022-go/utils"
 )
 
-// Example using 2022 Day 1 https://adventofcode.com/2020/day/1
+// Example using 2020 Day 1 https://adventofcode.com/2020/day/1
 func main() {
 	lines := utils.ReadFile("input.txt")
 	var expenses []int
