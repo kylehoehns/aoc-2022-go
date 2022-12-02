@@ -5,7 +5,8 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/kylehoehns/aoc-2022-go/utils"
+	"github.com/kylehoehns/aoc-2022-go/utils/files"
+	"github.com/kylehoehns/aoc-2022-go/utils/ints"
 )
 
 func main() {
@@ -15,7 +16,7 @@ func main() {
 }
 
 func convertFileToElfFood(name string) []ElfWithFood {
-	lines := utils.ReadFile(name)
+	lines := files.ReadLines(name)
 
 	var elfFoodItems []ElfWithFood
 	elfWithFood := ElfWithFood{}
@@ -39,11 +40,7 @@ type ElfWithFood struct {
 }
 
 func (e *ElfWithFood) totalCalories() int {
-	total := 0
-	for _, i := range e.items {
-		total += i
-	}
-	return total
+	return ints.Sum(e.items)
 }
 
 func part1(elfWithFoodItems []ElfWithFood) int {
@@ -61,7 +58,6 @@ func part2(elfWithFoodItems []ElfWithFood) int {
 	for _, elf := range elfWithFoodItems {
 		allCalories = append(allCalories, elf.totalCalories())
 	}
-	// reverse sort and grab the top 3
-	sort.Sort(sort.Reverse(sort.IntSlice(allCalories)))
-	return allCalories[0] + allCalories[1] + allCalories[2]
+	sort.Ints(allCalories)
+	return ints.Sum(allCalories[len(allCalories)-3:])
 }

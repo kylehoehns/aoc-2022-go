@@ -1,4 +1,4 @@
-package utils
+package files
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"runtime"
 )
 
-func ReadFile(name string) []string {
+func ReadLines(name string) []string {
 	_, callingFile, _, ok := runtime.Caller(1)
 	if !ok {
 		panic("unable to find caller so cannot build path to read file")
@@ -28,4 +28,16 @@ func ReadFile(name string) []string {
 	}
 
 	return lines
+}
+
+func Read(name string) string {
+	_, callingFile, _, ok := runtime.Caller(1)
+	if !ok {
+		panic("unable to find caller so cannot build path to read file")
+	}
+	b, err := os.ReadFile(path.Join(path.Dir(callingFile), name))
+	if err != nil {
+		panic(err)
+	}
+	return string(b)
 }
