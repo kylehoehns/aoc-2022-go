@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kylehoehns/aoc-2022-go/utils"
+	"github.com/kylehoehns/aoc-2022-go/utils/files"
 )
 
 // Example using 2020 Day 1 https://adventofcode.com/2020/day/1
 func main() {
-	lines := utils.ReadFile("input.txt")
+	lines := files.ReadLines("input.txt")
 	var expenses []int
 	for _, line := range lines {
 		i, err := strconv.Atoi(line)
