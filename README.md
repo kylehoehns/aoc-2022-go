@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-Working through some of the problems for [Advent of Code 2022](https://adventofcode.com/2022).
+Working through problems for [Advent of Code 2022](https://adventofcode.com/2022).
 
 Using [Go](https://go.dev/)
 
