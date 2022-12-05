@@ -9,8 +9,7 @@ func TestPart1(t *testing.T) {
 		actual := part1(elfFoodItems)
 		expected := 24000
 		if actual != expected {
-			t.Fail()
-			t.Logf("Expected %d but actual was %d", expected, actual)
+			t.Errorf("Expected %d but actual was %d", expected, actual)
 		}
 	})
 
@@ -23,8 +22,7 @@ func TestPart2(t *testing.T) {
 		actual := part2(elfFoodItems)
 		expected := 45000
 		if actual != expected {
-			t.Fail()
-			t.Logf("Expected %d but actual was %d", expected, actual)
+			t.Errorf("Expected %d but actual was %d", expected, actual)
 		}
 	})
 

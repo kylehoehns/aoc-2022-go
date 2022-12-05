@@ -8,8 +8,7 @@ func TestPart1(t *testing.T) {
 		actual := part1("./sample_input.txt", createPriorities())
 		expected := 157
 		if actual != expected {
-			t.Fail()
-			t.Logf("Expected %d but actual was %d", expected, actual)
+			t.Errorf("Expected %d but actual was %d", expected, actual)
 		}
 	})
 
@@ -21,8 +20,7 @@ func TestPart2(t *testing.T) {
 		actual := part2("./sample_input.txt", createPriorities())
 		expected := 70
 		if actual != expected {
-			t.Fail()
-			t.Logf("Expected %d but actual was %d", expected, actual)
+			t.Errorf("Expected %d but actual was %d", expected, actual)
 		}
 	})
 
