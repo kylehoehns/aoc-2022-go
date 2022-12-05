@@ -14,3 +14,24 @@ func TestSumList(t *testing.T) {
 	})
 
 }
+
+func TestFromString(t *testing.T) {
+
+	t.Run("Should convert string to int", func(t *testing.T) {
+		expected := 2113
+		actual := FromString("2113")
+		if expected != actual {
+			t.Errorf("Expected %d but actual was %d", expected, actual)
+		}
+	})
+
+	t.Run("Should panic if provide a string that cannot be turned into an int", func(t *testing.T) {
+		defer func() {
+			if r := recover(); r == nil {
+				t.Errorf("Expected code to panic")
+			}
+		}()
+
+		FromString("test")
+	})
+}

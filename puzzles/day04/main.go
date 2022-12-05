@@ -18,13 +18,7 @@ func part1(name string) int {
 
 	pairsFullyContained := 0
 	for _, line := range lines {
-		parts := strings.Split(line, ",")
-		firstParts := strings.Split(parts[0], "-")
-		firstMin := ints.FromString(firstParts[0])
-		firstMax := ints.FromString(firstParts[1])
-		secondParts := strings.Split(parts[1], "-")
-		secondMin := ints.FromString(secondParts[0])
-		secondMax := ints.FromString(secondParts[1])
+		firstMin, firstMax, secondMin, secondMax := parseLine(line)
 
 		if (firstMin <= secondMin && firstMax >= secondMax) || (secondMin <= firstMin && secondMax >= firstMax) {
 			pairsFullyContained++
@@ -38,13 +32,7 @@ func part2(name string) int {
 
 	pairsThatOverlap := 0
 	for _, line := range lines {
-		parts := strings.Split(line, ",")
-		firstParts := strings.Split(parts[0], "-")
-		firstMin := ints.FromString(firstParts[0])
-		firstMax := ints.FromString(firstParts[1])
-		secondParts := strings.Split(parts[1], "-")
-		secondMin := ints.FromString(secondParts[0])
-		secondMax := ints.FromString(secondParts[1])
+		firstMin, firstMax, secondMin, secondMax := parseLine(line)
 
 		if (secondMin >= firstMin && secondMin <= firstMax) || (secondMax >= firstMin && secondMax <= firstMax) ||
 			(firstMin >= secondMin && firstMin <= secondMax) || (firstMax >= secondMin && firstMax <= secondMax) {
@@ -52,4 +40,15 @@ func part2(name string) int {
 		}
 	}
 	return pairsThatOverlap
+}
+
+func parseLine(line string) (int, int, int, int) {
+	parts := strings.Split(line, ",")
+	firstParts := strings.Split(parts[0], "-")
+	firstMin := ints.FromString(firstParts[0])
+	firstMax := ints.FromString(firstParts[1])
+	secondParts := strings.Split(parts[1], "-")
+	secondMin := ints.FromString(secondParts[0])
+	secondMax := ints.FromString(secondParts[1])
+	return firstMin, firstMax, secondMin, secondMax
 }

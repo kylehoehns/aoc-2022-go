@@ -13,8 +13,7 @@ func TestReadLines(t *testing.T) {
 		actual := ReadLines("./input.txt")
 
 		if !reflect.DeepEqual(expected, actual) {
-			t.Fail()
-			t.Logf("Expected %s but actual was %s", expected, actual)
+			t.Errorf("Expected %s but actual was %s", expected, actual)
 		}
 
 	})
@@ -27,8 +26,7 @@ func TestRead(t *testing.T) {
 		actual := Read("./input.txt")
 
 		if expected != actual {
-			t.Fail()
-			t.Logf("Expected %s but actual was %s", expected, actual)
+			t.Errorf("Expected %s but actual was %s", expected, actual)
 		}
 	})
 }
