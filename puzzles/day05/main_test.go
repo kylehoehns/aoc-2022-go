@@ -5,10 +5,10 @@ import "testing"
 func TestPart1(t *testing.T) {
 
 	t.Run("Part 1", func(t *testing.T) {
-		actual := 2
-		expected := 2
+		actual := part1("./sample_input.txt")
+		expected := "CMZ"
 		if actual != expected {
-			t.Errorf("Expected %d but actual was %d", expected, actual)
+			t.Errorf("Expected %s but actual was %s", expected, actual)
 		}
 	})
 
@@ -17,10 +17,10 @@ func TestPart1(t *testing.T) {
 func TestPart2(t *testing.T) {
 
 	t.Run("Part 2", func(t *testing.T) {
-		actual := 4
-		expected := 4
+		actual := part2("./sample_input.txt")
+		expected := "MCD"
 		if actual != expected {
-			t.Errorf("Expected %d but actual was %d", expected, actual)
+			t.Errorf("Expected %s but actual was %s", expected, actual)
 		}
 	})
 
