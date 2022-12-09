@@ -17,3 +17,10 @@ func FromString(str string) int {
 	}
 	return val
 }
+
+func Abs(i int) int {
+	if i < 0 {
+		return -i
+	}
+	return i
+}
